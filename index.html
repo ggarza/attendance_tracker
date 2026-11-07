@@ -575,13 +575,14 @@ Calculus I – Section 01,Mia Thompson,mia@example.edu,,,P,P</pre>
         <p class="small muted" id="tplOrig" hidden style="margin:-4px 0 0">Edited starter · <button type="button" class="linkish" id="tplOrigBtn" style="color:var(--accent)">Restore original wording</button></p>
         <label class="fld"><span>Subject</span><input type="text" id="tplSubject"></label>
         <label class="fld"><span>Message</span><textarea id="tplBody" rows="10"></textarea></label>
-        <p class="small muted" style="margin:0">Placeholders: <code>{first}</code> <code>{name}</code> <code>{date}</code> <code>{class}</code> <code>{seat}</code> <code>{instructor}</code> <code>{officehours}</code> <code>{office}</code> <code>{topic}</code> <code>{focus}</code> <code>{videos}</code></p>
+        <p class="small muted" style="margin:0">Placeholders: <code>{first}</code> <code>{name}</code> <code>{date}</code> <code>{class}</code> <code>{seat}</code> <code>{instructor}</code> <code>{officehours}</code> <code>{office}</code> <code>{special}</code> <code>{topic}</code> <code>{focus}</code> <code>{videos}</code></p>
         <div class="mydetails">
           <p class="small muted" style="margin:0">Your details fill these tags in every template. Leave one blank and the line that uses it is left out.</p>
           <label class="fld"><span>Your name <code>{instructor}</code></span><input type="text" id="instrName" placeholder="e.g. Prof. García" autocomplete="name"></label>
           <div class="row" style="flex-wrap:wrap">
             <label class="fld" style="flex:1 1 200px"><span>Office hours <code>{officehours}</code></span><input type="text" id="offHours" placeholder="e.g. Mon & Wed 1:00–2:30 pm, or by appointment"></label>
             <label class="fld" style="flex:1 1 160px"><span>Office <code>{office}</code></span><input type="text" id="offRoom" placeholder="e.g. Science Building, Room 3.142"></label></div>
+          <label class="fld"><span>Special text <code>{special}</code></span><textarea id="specialText" rows="2" placeholder="e.g. Reminder: Exam 2 is on Thursday, November 12, during our regular class time."></textarea></label>
         </div>
         <div class="row">
           <button class="btn primary" id="tplSave" type="button">Save template</button>
@@ -827,7 +828,7 @@ Pérez,Luis,luis.perez@utrgv.edu</pre>
     <h4>Review history</h4>
     <p>One row per student and one column for every recorded date, with absence and excused totals. To go to a date, use <b>Jump to date</b>, the date bar, its calendar (<kbd>G</kbd>), or <kbd>[</kbd> / <kbd>]</kbd> to hop between recorded dates. The grid scrolls to that column, flashes it, and puts the cursor there. Type in <b>Find student</b> (or press <kbd>/</kbd>) to show only matching students. Click the <b>Last name</b>, <b>First name</b>, <b>Row</b> (seat order), <b>Absent</b>, or <b>Excused</b> header to sort; click it again to reverse. Absences and excused sort most-first, and the sort is remembered. While you mark cells, rows stay where they are so the cursor doesn't jump; press <b>↻ Re-sort</b> (or Esc) to refresh the order. It is editable: click any cell to cycle Present → Absent → Excused, or focus it and press <kbd>P</kbd>, <kbd>A</kbd>, or <kbd>E</kbd>. Use <b>Add date</b> to record a day where everyone was present, and × in a column header to delete that date. Take attendance and Review history edit the same records, so a change in one shows up in the other immediately.</p>
     <h4>Send emails</h4>
-    <p>The <b>Subject</b> and <b>Message</b> on the left are the email being drafted, and the drafts on the right update as you type. Picking a template loads it as a starting point. Your edits are used right away without saving; an “Edited” note appears with <b>Revert</b> to go back. <b>Save template</b> keeps your edits in that template, and <b>Duplicate</b> saves them as a new one. Your draft is kept if you reload. A starter template you've changed and saved is marked <b>(edited)</b> in the template menu, with <b>Restore original wording</b> under its title; your edited version goes to Recently deleted, so it can be brought back as its own template. Type your name in <b>Your name for {instructor}</b> (above Save template) and it fills <code>{instructor}</code>, which the starter templates use under their closing; leave it blank and that line is simply left out. <b>Office hours</b> and <b>Office</b> next to it fill <code>{officehours}</code> and <code>{office}</code> the same way; the four office-hours templates list them on their own lines, so a blank one just disappears.</p>
+    <p>The <b>Subject</b> and <b>Message</b> on the left are the email being drafted, and the drafts on the right update as you type. Picking a template loads it as a starting point. Your edits are used right away without saving; an “Edited” note appears with <b>Revert</b> to go back. <b>Save template</b> keeps your edits in that template, and <b>Duplicate</b> saves them as a new one. Your draft is kept if you reload. A starter template you've changed and saved is marked <b>(edited)</b> in the template menu, with <b>Restore original wording</b> under its title; your edited version goes to Recently deleted, so it can be brought back as its own template. Type your name in <b>Your name for {instructor}</b> (above Save template) and it fills <code>{instructor}</code>, which the starter templates use under their closing; leave it blank and that line is simply left out. <b>Office hours</b> and <b>Office</b> next to it fill <code>{officehours}</code> and <code>{office}</code> the same way; the four office-hours templates list them on their own lines, so a blank one just disappears. <b>Special text</b> below them fills <code>{special}</code>, for a note you want in every email for a while (an exam reminder, a room change); templates with an office-hours line put it just above that line, and when it's blank it's left out.</p>
     <p>Keep a library of response templates on the left. On the right, choose recipients. Students absent on the selected date are pre-selected. The filter buttons (<b>All</b>, <b>Absent</b>, <b>Excused</b>, <b>Absent 2+ times</b>) choose which students are listed, and only those students are shown. Picking Absent, Excused, or Absent 2+ times also selects everyone it lists, which you can then trim. Picking All shows the whole class without selecting anyone extra. Use the <b>−</b> and <b>+</b> beside “Absent 2+ times” to change the number (for example, 3+ or 4+); the list and selection update right away and the number is remembered. Search narrows the list further; <kbd>Shift</kbd>-click selects a range. If a selected student is hidden by your search, the count says so.</p>
     <ul>
       <li><b>One email (BCC)</b> writes a single message with every selected address on the BCC line, so students can't see each other's addresses. You can put your own address in To. Personal placeholders like <code>{first}</code> become “everyone”.</li>
@@ -962,52 +963,52 @@ function extraTemplates() {   // added in template set v2
   return [
     { id: uid(), title: "Missed quiz or exam — make-up plan",
       subject: "{class}: let's plan your make-up from {date}",
-      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}, when we had our quiz/exam. I hope you're doing okay.\n\nMissing an assessment happens, and I want to make sure it doesn't set you back. Could you reply with a few days and times that work for you this week? We'll find a time for you to take it. If something is making it hard to get to class right now, you're welcome to tell me, and we can plan around it.\n\nIf you'd like to review first, I'm glad to go over the material with you during office hours.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nLooking forward to hearing from you," },
+      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}, when we had our quiz/exam. I hope you're doing okay.\n\nMissing an assessment happens, and I want to make sure it doesn't set you back. Could you reply with a few days and times that work for you this week? We'll find a time for you to take it. If something is making it hard to get to class right now, you're welcome to tell me, and we can plan around it.\n\nIf you'd like to review first, I'm glad to go over the material with you during office hours.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nLooking forward to hearing from you," },
     { id: uid(), title: "Several missed classes — checking on you",
       subject: "{class}: checking in on you",
-      body: "Hi {first},\n\nI've noticed you haven't been in {class} for a few sessions, most recently on {date}, and I wanted to reach out. You don't owe me an explanation; I just want to make sure you have the support you need.\n\nIf something is going on, whether it's health, family, work, or anything else, please know you're not alone. There are people on campus ready to help, including counseling services and the Dean of Students office. I'm also happy to talk about what would make it easier to get back on track, whether that's a catch-up plan, extra help, or just a quick conversation.\n\nWhenever you're ready, reply to this email or stop by office hours. I'm glad you're in this class.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nTake care," },
+      body: "Hi {first},\n\nI've noticed you haven't been in {class} for a few sessions, most recently on {date}, and I wanted to reach out. You don't owe me an explanation; I just want to make sure you have the support you need.\n\nIf something is going on, whether it's health, family, work, or anything else, please know you're not alone. There are people on campus ready to help, including counseling services and the Dean of Students office. I'm also happy to talk about what would make it easier to get back on track, whether that's a catch-up plan, extra help, or just a quick conversation.\n\nWhenever you're ready, reply to this email or stop by office hours. I'm glad you're in this class.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nTake care," },
     { id: uid(), title: "Excused absence — thanks for letting me know",
       subject: "{class}: your absence on {date} is excused",
-      body: "Hi {first},\n\nThank you for letting me know about your absence on {date}. I've marked it as excused, so there's nothing more you need to do for it.\n\nI hope everything is okay. When you're ready, you'll find that day's notes and materials posted for the class. If anything is unclear or you'd like help catching up, just reply or stop by office hours. I'm happy to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
+      body: "Hi {first},\n\nThank you for letting me know about your absence on {date}. I've marked it as excused, so there's nothing more you need to do for it.\n\nI hope everything is okay. When you're ready, you'll find that day's notes and materials posted for the class. If anything is unclear or you'd like help catching up, just reply or stop by office hours. I'm happy to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
     { id: uid(), title: "Missed group work — catching up with your team",
       subject: "{class}: catching up on the group work from {date}",
-      body: "Hi {first},\n\nWe missed you in {class} on {date}. Your group worked through that day's activity, and your ideas are a real part of what makes those sessions work.\n\nTo catch up, try working through the activity on your own, then compare notes with your teammates. They're a great resource, and so am I. If any part of it doesn't make sense, bring your questions to office hours and we'll go through them together.\n\nI hope you're doing well, and I look forward to seeing you next class.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
+      body: "Hi {first},\n\nWe missed you in {class} on {date}. Your group worked through that day's activity, and your ideas are a real part of what makes those sessions work.\n\nTo catch up, try working through the activity on your own, then compare notes with your teammates. They're a great resource, and so am I. If any part of it doesn't make sense, bring your questions to office hours and we'll go through them together.\n\nI hope you're doing well, and I look forward to seeing you next class.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
     { id: uid(), title: "Nearing the attendance limit — let's make a plan",
       subject: "{class}: let's talk about a plan together",
-      body: "Hi {first},\n\nI'm reaching out because you were absent again on {date}, and your absences are getting close to the limit in our course attendance policy. I'm not writing to scold you. I want you to succeed in {class}, and I'd rather we talk now, while there's still plenty of time to turn things around.\n\nCould we meet this week, during office hours or at another time that works for you? We'll look at where you stand, what's been getting in the way, and a realistic plan for the rest of the semester. If something outside of class is making attendance hard, please let me know. There may be options and campus support available.\n\nI believe you can do this, and I'm here to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," }
+      body: "Hi {first},\n\nI'm reaching out because you were absent again on {date}, and your absences are getting close to the limit in our course attendance policy. I'm not writing to scold you. I want you to succeed in {class}, and I'd rather we talk now, while there's still plenty of time to turn things around.\n\nCould we meet this week, during office hours or at another time that works for you? We'll look at where you stand, what's been getting in the way, and a realistic plan for the rest of the semester. If something outside of class is making attendance hard, please let me know. There may be options and campus support available.\n\nI believe you can do this, and I'm here to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," }
   ];
 }
 function extraTemplatesV3() {   // added in template set v3
   return [
     { id: uid(), title: "Missed exam review — getting ready together",
       subject: "{class}: getting ready for the exam",
-      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}. That session focused on reviewing for our upcoming exam, so I wanted to make sure you still have everything you need to feel prepared.\n\nThe review materials from that day are posted for the class. Please take a look, and if any topic feels shaky, bring your questions to office hours or reply to this email. We can work through problems together, and even a few minutes of practice can make a big difference.\n\nYou've got this, and I'm here to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
+      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}. That session focused on reviewing for our upcoming exam, so I wanted to make sure you still have everything you need to feel prepared.\n\nThe review materials from that day are posted for the class. Please take a look, and if any topic feels shaky, bring your questions to office hours or reply to this email. We can work through problems together, and even a few minutes of practice can make a big difference.\n\nYou've got this, and I'm here to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
     { id: uid(), title: "Welcome back after time away",
       subject: "{class}: welcome back",
-      body: "Hi {first},\n\nI hope you're doing alright. I know you've been away from {class} for a little while, most recently on {date}, and I want you to know you're welcome back whenever you're ready.\n\nComing back after time away can feel overwhelming, so let's take it one step at a time. I'd be glad to meet briefly to go over what you've missed, what's most important to focus on first, and what a manageable catch-up plan could look like. You don't need to do it all at once.\n\nPlease reply with a time that works for you, or stop by office hours. I'm glad to have you back in class.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
+      body: "Hi {first},\n\nI hope you're doing alright. I know you've been away from {class} for a little while, most recently on {date}, and I want you to know you're welcome back whenever you're ready.\n\nComing back after time away can feel overwhelming, so let's take it one step at a time. I'd be glad to meet briefly to go over what you've missed, what's most important to focus on first, and what a manageable catch-up plan could look like. You don't need to do it all at once.\n\nPlease reply with a time that works for you, or stop by office hours. I'm glad to have you back in class.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
     { id: uid(), title: "Missed an important announcement",
       subject: "{class}: an update from class on {date}",
-      body: "Hi {first},\n\nWe missed you in {class} on {date}. I shared an important announcement in class that day, and I didn't want you to miss it:\n\n[Write the announcement here, for example a changed due date, a new assignment, or an exam room change.]\n\nIf you have any questions about it, or about anything else from that day, just reply to this email or stop by office hours. I'm happy to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nHope to see you next class," }
+      body: "Hi {first},\n\nWe missed you in {class} on {date}. I shared an important announcement in class that day, and I didn't want you to miss it:\n\n[Write the announcement here, for example a changed due date, a new assignment, or an exam room change.]\n\nIf you have any questions about it, or about anything else from that day, just reply to this email or stop by office hours. I'm happy to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nHope to see you next class," }
   ];
 }
 function extraTemplatesV10() {   // added in template set v10: excused for a university-sponsored activity
   return [
     { id: uid(), title: "Excused for a university activity — catching up",
       subject: "{class}: catching up after {date}",
-      body: "Hi {first},\n\nThank you for letting me know about your university-sponsored activity on {date}. Your absence is excused, so there's nothing more you need to do for it. I hope it went well!\n\nTo catch up on {class}, please look over the notes and materials posted for that day. If anything was due or assessed that day, let me know and we'll arrange a time for you to complete it.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nIf anything is unclear, feel free to reply to this email or stop by office hours.\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," }
+      body: "Hi {first},\n\nThank you for letting me know about your university-sponsored activity on {date}. Your absence is excused, so there's nothing more you need to do for it. I hope it went well!\n\nTo catch up on {class}, please look over the notes and materials posted for that day. If anything was due or assessed that day, let me know and we'll arrange a time for you to complete it.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nIf anything is unclear, feel free to reply to this email or stop by office hours.\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," }
   ];
 }
 function extraTemplatesV9() {   // added in template set v9: more topic-and-video notes, worded differently
   return [
     { id: uid(), title: "Summary and videos for the day you missed",
       subject: "{class}: what we covered on {date}",
-      body: "Hi {first},\n\nWe missed you in {class} on {date}, when we worked on {topic}. Here's a short summary and a few videos in case they're helpful.\n\nMain ideas: {focus}\n\nVideos:\n{videos}\n\nIf you have questions after watching, you're welcome to bring them to office hours or reply to this email.\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
+      body: "Hi {first},\n\nWe missed you in {class} on {date}, when we worked on {topic}. Here's a short summary and a few videos in case they're helpful.\n\nMain ideas: {focus}\n\nVideos:\n{videos}\n\nIf you have questions after watching, you're welcome to bring them to office hours or reply to this email.\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
     { id: uid(), title: "Getting ready for next class",
       subject: "{class}: before our next class",
-      body: "Hi {first},\n\nSince you weren't in {class} on {date}, it may help to look over {topic} before our next class, because we'll be building on it.\n\nThese videos are a good place to start:\n{videos}\n\nAfterward, try a few of the examples for {topic} in the lecture notes.\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
+      body: "Hi {first},\n\nSince you weren't in {class} on {date}, it may help to look over {topic} before our next class, because we'll be building on it.\n\nThese videos are a good place to start:\n{videos}\n\nAfterward, try a few of the examples for {topic} in the lecture notes.\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
     { id: uid(), title: "A simple plan to catch up",
       subject: "{class}: a plan for catching up on {date}",
-      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}. Here's a simple plan for catching up on {topic}:\n\n1. Read that section in the lecture notes.\n2. Watch the videos below and take brief notes.\n3. Work the examples in the notes on your own, pausing to try each step first.\n\n{videos}\n\nIf you get stuck, I'm happy to help.\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
+      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}. Here's a simple plan for catching up on {topic}:\n\n1. Read that section in the lecture notes.\n2. Watch the videos below and take brief notes.\n3. Work the examples in the notes on your own, pausing to try each step first.\n\n{videos}\n\nIf you get stuck, I'm happy to help.\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
     { id: uid(), title: "Quick recap — no reply needed",
       subject: "{class}: a quick recap of {date}",
       body: "Hi {first},\n\nHere's a quick recap of {class} on {date}: we covered {topic}.\n\nMain ideas: {focus}\n\nIf it helps, these videos cover the same material:\n{videos}\n\nThere's no need to reply to this email.\n\nBest," }
@@ -1017,26 +1018,26 @@ function extraTemplatesV8() {   // added in template set v8: the day's topic and
   return [
     { id: uid(), title: "Videos for the day you missed",
       subject: "{class}: catching up on {date}",
-      body: "Hi {first},\n\nYou weren't in {class} on {date}, so I wanted to share a few resources for catching up.\n\nThat day we covered {topic}: {focus}\n\nThese videos walk through the same material:\n{videos}\n\nAfter watching, try the examples for {topic} in the lecture notes.\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
+      body: "Hi {first},\n\nYou weren't in {class} on {date}, so I wanted to share a few resources for catching up.\n\nThat day we covered {topic}: {focus}\n\nThese videos walk through the same material:\n{videos}\n\nAfter watching, try the examples for {topic} in the lecture notes.\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
     { id: uid(), title: "Videos to catch up — no reply needed",
       subject: "{class}: videos from {date}",
-      body: "Hi {first},\n\nYou weren't in {class} on {date}, so here are a few videos on what we covered, in case they help.\n\nTopic: {topic}\n{videos}\n\nThere's no need to reply to this email.\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," }
+      body: "Hi {first},\n\nYou weren't in {class} on {date}, so here are a few videos on what we covered, in case they help.\n\nTopic: {topic}\n{videos}\n\nThere's no need to reply to this email.\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," }
   ];
 }
 function extraTemplatesV7() {   // added in template set v7: office hours and office, filled from your details
   return [
     { id: uid(), title: "Office hours — help catching up",
       subject: "{class}: office hours",
-      body: "Hi {first},\n\nYou weren't in {class} on {date}. If you'd like help with the material from that day, you're welcome to come to office hours.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nNo appointment is needed during office hours. If office hours don't work for you, reply with a few times that do.\n\nBest regards," },
+      body: "Hi {first},\n\nYou weren't in {class} on {date}. If you'd like help with the material from that day, you're welcome to come to office hours.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nNo appointment is needed during office hours. If office hours don't work for you, reply with a few times that do.\n\nBest regards," },
     { id: uid(), title: "Office hours reminder — no reply needed",
       subject: "{class}: office hours reminder",
-      body: "Hi {first},\n\nA quick reminder of when and where office hours are held for {class}, in case it's useful after missing class on {date}.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nThere's no need to reply to this email.\n\nBest," },
+      body: "Hi {first},\n\nA quick reminder of when and where office hours are held for {class}, in case it's useful after missing class on {date}.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nThere's no need to reply to this email.\n\nBest," },
     { id: uid(), title: "Where to get help with the material",
       subject: "{class}: getting help with {date}",
       body: "Hi {first},\n\nSince you missed {class} on {date}, here is where you can get help with that day's material:\n\n• Notes and materials: posted with the course materials\n• Office hours: {officehours}\n• Office: {office}\n• Email: reply to this message with any questions\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nBest regards," },
     { id: uid(), title: "Please stop by office hours",
       subject: "{class}: please stop by office hours",
-      body: "Hi {first},\n\nI'd like to meet briefly about your absence from {class} on {date} and what you'll need to catch up. Please stop by during office hours, or reply with a time that works if you can't make it.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nThank you," }
+      body: "Hi {first},\n\nI'd like to meet briefly about your absence from {class} on {date} and what you'll need to catch up. Please stop by during office hours, or reply with a time that works if you can't make it.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nThank you," }
   ];
 }
 function extraTemplatesV6() {   // added in template set v6: gentle notes that say no reply is needed (appended so earlier ids stay the same)
@@ -1046,7 +1047,7 @@ function extraTemplatesV6() {   // added in template set v6: gentle notes that s
       body: "Hi {first},\n\nI noticed you weren't in {class} on {date}, so I wanted to send a quick note.\n\nThere's no need to reply to this email. You're welcome back in class anytime, and I'm happy to help you catch up on the material whenever you're ready.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nBest," },
     { id: uid(), title: "Help is available — no reply needed",
       subject: "{class}: help with the course",
-      body: "Hi {first},\n\nWe missed you in {class} on {date}. As a reminder, I'm available to help with questions about the material or to work out a plan to catch up.\n\nNo need to reply to this message. Office hours and email are always open if they would help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
+      body: "Hi {first},\n\nWe missed you in {class} on {date}. As a reminder, I'm available to help with questions about the material or to work out a plan to catch up.\n\nNo need to reply to this message. Office hours and email are always open if they would help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards," },
     { id: uid(), title: "Materials are posted — no reply needed",
       subject: "{class}: materials from {date}",
       body: "Hi {first},\n\nJust a quick note since you weren't in {class} on {date}: the notes and materials from that day are posted, so you can look them over when you have a moment.\n\nYou don't need to reply to this email. If anything is unclear once you've had a look, I'm glad to go over it with you.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nBest," },
@@ -1062,7 +1063,7 @@ function extraTemplatesV5() {   // added in template set v5: more general, non-s
       body: "Hi {first},\n\nI'm reaching out to see how things are going in {class}. I noticed you weren't with us on {date}, and I wanted to make sure you have everything you need.\n\nIf anything is getting in the way, or there's a topic you'd like to go over, just let me know. I'm glad to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nBest," },
     { id: uid(), title: "An open invitation to office hours",
       subject: "{class}: you're welcome at office hours",
-      body: "Hi {first},\n\nYou weren't in {class} on {date}, so I wanted to remind you that office hours are a great place to catch up, ask questions, or work through anything that feels unclear. No question is too small.\n\nIf my regular hours don't work for you, reply with a few times that do and we'll find something.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nHope to see you soon," },
+      body: "Hi {first},\n\nYou weren't in {class} on {date}, so I wanted to remind you that office hours are a great place to catch up, ask questions, or work through anything that feels unclear. No question is too small.\n\nIf my regular hours don't work for you, reply with a few times that do and we'll find something.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nHope to see you soon," },
     { id: uid(), title: "What we worked on — you can catch up",
       subject: "{class}: what we covered on {date}",
       body: "Hi {first},\n\nYou weren't in {class} on {date}, so I wanted to make sure you know where to find what we worked on. The notes and materials from that day are posted with the rest of the course materials.\n\nTake a look when you can, and let me know if anything doesn't make sense. I'm happy to walk through it with you.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nBest regards," },
@@ -1081,10 +1082,10 @@ function extraTemplatesV4() {   // added in template set v4: general notes for a
       body: "Hi {first},\n\nJust a quick note to say we missed you in {class} on {date}. There's no need to explain; this is just a quick note so you know where to find what we covered.\n\nThe materials from that class are posted, and I'm happy to answer any questions. See you next time!\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nBest," },
     { id: uid(), title: "One missed class — easy ways to catch up",
       subject: "{class}: catching up on {date}",
-      body: "Hi {first},\n\nI noticed you weren't able to make it to {class} on {date}. Missing a class happens to everyone, and catching up is very doable.\n\nA few easy next steps:\n• Look over the notes and materials posted for that day.\n• Ask a classmate what they found most helpful.\n• Bring any questions to office hours, or reply to this email.\n\nI'm here to help if anything is unclear.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
+      body: "Hi {first},\n\nI noticed you weren't able to make it to {class} on {date}. Missing a class happens to everyone, and catching up is very doable.\n\nA few easy next steps:\n• Look over the notes and materials posted for that day.\n• Ask a classmate what they found most helpful.\n• Bring any questions to office hours, or reply to this email.\n\nI'm here to help if anything is unclear.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest," },
     { id: uid(), title: "Hope all is well — no reply needed",
       subject: "{class}: hope all is well",
-      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}, and I just wanted to check in. I hope everything is okay.\n\nYou don't need to reply to this message. If you'd like help catching up, or just want to talk, you're welcome to stop by office hours or send me an email anytime.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nTake care," }
+      body: "Hi {first},\n\nI noticed you weren't in {class} on {date}, and I just wanted to check in. I hope everything is okay.\n\nYou don't need to reply to this message. If you'd like help catching up, or just want to talk, you're welcome to stop by office hours or send me an email anytime.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nTake care," }
   ];
 }
 /* Starter templates have stable ids ("st-01"…), so the app can always tell which ones a library is missing. */
@@ -1095,11 +1096,11 @@ function defaultTemplates() { return starterTemplates(); }
 function defaultTemplatesBase() {
   return [
     { id: uid(), title: 'Missed class — check in', subject: '{class}: we missed you on {date}',
-      body: 'Hi {first},\n\nI noticed you weren\'t in {class} on {date}. I hope everything is okay.\n\nPlease review the notes and materials posted for that day, and feel free to reach out or stop by office hours if anything is unclear. I\'m happy to help you catch up.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards,' },
+      body: 'Hi {first},\n\nI noticed you weren\'t in {class} on {date}. I hope everything is okay.\n\nPlease review the notes and materials posted for that day, and feel free to reach out or stop by office hours if anything is unclear. I\'m happy to help you catch up.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest regards,' },
     { id: uid(), title: 'Excused absence — documentation', subject: '{class}: absence on {date}',
       body: 'Hi {first},\n\nYou were marked absent from {class} on {date}. If this absence was for an approved reason, please send me any documentation and I\'ll update your record to excused.\n\nIn the meantime, please make sure to review that day\'s materials.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nThank you,' },
     { id: uid(), title: 'Repeated absences — let\'s talk', subject: '{class}: checking in about attendance',
-      body: 'Hi {first},\n\nI noticed you were absent again on {date}, and I want to make sure you have what you need to succeed in {class}. Could we find a time to talk this week, either in office hours or by appointment?\n\nI\'m here to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest,' },
+      body: 'Hi {first},\n\nI noticed you were absent again on {date}, and I want to make sure you have what you need to succeed in {class}. Could we find a time to talk this week, either in office hours or by appointment?\n\nI\'m here to help.\n\nIf it helps, these videos cover what we worked on that day ({topic}):\n{videos}\n\n{special}\n\nOffice hours: {officehours}\nOffice: {office}\n\nBest,' },
   ];
 }
 
@@ -1126,14 +1127,14 @@ function demo() {
 function base() {
   return { v: 1, className: '', date: todayStr(), rows: 6, cols: 8, aisles: [4], shape: 'rows', tablesAcross: 3, instructorView: false,
     mode: 'take', view: 'classroom', students: {}, seats: {}, attendance: {}, notes: {}, emailLog: [], guide: null, topics: {}, bin: [], templates: defaultTemplates(), tplVersion: 4, removedStarters: [], bccTo: '', work: null, absMin: 2, importMode: 'merge', embedSeen: '',
-    classView: 'list', listMode: 'one', listStart: 'P', sheetSel: '', sheetOpts: { dates: 'print', cols: 8, extra: 0, ev: 2 }, histSort: { by: 'seat', dir: 1 }, lastBackup: '', backupSig: '', instructor: '', instrSig: 1, office: '', officeHours: '', cleanupSeen: {} };
+    classView: 'list', listMode: 'one', listStart: 'P', sheetSel: '', sheetOpts: { dates: 'print', cols: 8, extra: 0, ev: 2 }, histSort: { by: 'seat', dir: 1 }, lastBackup: '', backupSig: '', instructor: '', instrSig: 1, office: '', officeHours: '', special: '', tplSpecial: 1, cleanupSeen: {} };
 }
 /* ---------- storage: classes + rooms ----------
    Saved as { v:2, active, classes:{id:{className,students,seats,attendance,roomId}}, rooms:{id:{name,shape,rows,cols,aisles,tablesAcross}}, global:{…} }.
    While the app runs, S is a flat view of the active class + its room + shared settings, so the rest of the code is unchanged. */
 const ROOM_KEYS = ['shape', 'rows', 'cols', 'aisles', 'tablesAcross'];
 const CLASS_KEYS = ['className', 'students', 'seats', 'attendance', 'days', 'sheets', 'notes', 'emailLog', 'guide', 'topics'];
-const GLOBAL_KEYS = ['date', 'view', 'mode', 'instructorView', 'templates', 'tplVersion', 'bccTo', 'work', 'absMin', 'importMode', 'embedSeen', 'removedStarters', 'classView', 'listMode', 'listStart', 'sheetSel', 'sheetOpts', 'histSort', 'lastBackup', 'backupSig', 'instructor', 'instrSig', 'bin', 'office', 'officeHours', 'cleanupSeen'];
+const GLOBAL_KEYS = ['date', 'view', 'mode', 'instructorView', 'templates', 'tplVersion', 'bccTo', 'work', 'absMin', 'importMode', 'embedSeen', 'removedStarters', 'classView', 'listMode', 'listStart', 'sheetSel', 'sheetOpts', 'histSort', 'lastBackup', 'backupSig', 'instructor', 'instrSig', 'bin', 'office', 'officeHours', 'special', 'tplSpecial', 'cleanupSeen'];
 const pick = (o, keys) => Object.fromEntries(keys.filter(k => o[k] !== undefined).map(k => [k, o[k]]));
 /* Every starter template is kept in the library unless the instructor deleted it (remembered in removedStarters),
    so restoring an older backup, importing old data, or opening an older copy never shrinks the library,
@@ -1250,6 +1251,12 @@ function fixStore(st) {
     g.instrSig = 1;
   }
   reviseStarters(g);
+  if (!g.tplSpecial) {                                     // one time: put {special} above the "Office hours:" line of saved templates and the draft
+    const addSpecial = b => /\{special\}/i.test(b) ? b : b.replace(/(^|\n)(Office hours: \{officehours\})/i, '$1{special}\n\n$2');
+    g.templates.forEach(t => { t.body = addSpecial(String(t.body || '')); });
+    if (g.work && typeof g.work.body === 'string') g.work.body = addSpecial(g.work.body);
+    g.tplSpecial = 1;
+  }
   for (const k of GLOBAL_KEYS) if (g[k] === undefined || g[k] === null) g[k] = b[k];
   pruneBin(g);
   if (!isDate(g.date)) g.date = todayStr();
@@ -1739,7 +1746,7 @@ function analyzeMerge(inc) {
   const bids = new Set((g.bin || []).map(x => x.id));
   for (const x of ig.bin || []) if (!bids.has(x.id)) { (g.bin ||= []).push(clone(x)); rep.bin++; }
   g.bin.sort((a, b) => a.at < b.at ? 1 : -1);
-  for (const k of ['instructor', 'office', 'officeHours']) if (!g[k] && ig[k]) g[k] = ig[k];
+  for (const k of ['instructor', 'office', 'officeHours', 'special']) if (!g[k] && ig[k]) g[k] = ig[k];
   return { out, rep };
 }
 let restoreState = null;   // { inc, text, name, merge: {out, rep}, mode }
@@ -3434,6 +3441,7 @@ function renderTemplates(force) {
   if (ae !== $('#instrName')) $('#instrName').value = S.instructor || '';
   if (ae !== $('#offHours')) $('#offHours').value = S.officeHours || '';
   if (ae !== $('#offRoom')) $('#offRoom').value = S.office || '';
+  if (ae !== $('#specialText')) $('#specialText').value = S.special || '';
   ['#tplTitle', '#tplDel', '#tplDup'].forEach(s => $(s).disabled = !t);
   $('#tplSave').textContent = t ? 'Save template' : 'Save as template';
   const missing = (S.removedStarters || []).length;
@@ -3442,7 +3450,7 @@ function renderTemplates(force) {
 }
 /* Your details (name, office hours, office) are shared by every template. A line whose detail tag is blank is left out,
    so "Office: {office}" disappears when no office is set; extra blank lines that leaves behind are tidied up. */
-const myDetails = () => ({ instructor: (S.instructor || '').trim(), officehours: (S.officeHours || '').trim(), office: (S.office || '').trim() });
+const myDetails = () => ({ instructor: (S.instructor || '').trim(), officehours: (S.officeHours || '').trim(), office: (S.office || '').trim(), special: (S.special || '').trim() });
 function fillWith(str, map) {
   if (!map.topic) {                                        // no topic for the date: drop whole paragraphs that use a topic tag
     const t = String(str);
@@ -4324,6 +4332,7 @@ $('#tplTitle').addEventListener('input', () => { updateTplState(); renderDrafts(
 $('#instrName').addEventListener('input', e => { S.instructor = e.target.value; save(); renderDrafts(); });
 $('#offHours').addEventListener('input', e => { S.officeHours = e.target.value; save(); renderDrafts(); });
 $('#offRoom').addEventListener('input', e => { S.office = e.target.value; save(); renderDrafts(); });
+$('#specialText').addEventListener('input', e => { S.special = e.target.value; save(); renderDrafts(); });
 $('#tplSave').addEventListener('click', () => {
   let t = curTpl();
   if (!t) { t = { id: uid(), title: '', subject: '', body: '' }; S.templates.push(t); tplSel = t.id; }
